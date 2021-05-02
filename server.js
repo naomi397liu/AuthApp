@@ -1,10 +1,12 @@
 //server set up
 const http = require('http');
-const app = require('./app')
-const port = process.env.port || 3000;
-const server = http.createServer(); //fill in later -> listens 
+const app = require('./api/user_routes');
+const port = 3000;
+//  || process.env.PORT
+//request application = app handler => listener
+const server = http.createServer(app);  
 server.listen(port);
-
+module.exports = app;
 
 // const express = require("express");
 // const router = express.Router();
@@ -45,4 +47,4 @@ server.listen(port);
     
 // });
 
-// module.exports = router;
+
